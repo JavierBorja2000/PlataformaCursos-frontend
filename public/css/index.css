@@ -1,0 +1,38 @@
+/*Personalizados*/
+.panel-btn{
+    margin-top: 3px !important;
+}
+.panel-m{
+    transform: translateX(100%);
+}
+
+.panel-m.is-active{
+    transform: translateX(0);
+}
+
+@media (min-width: 640px) {
+    .hamburger {
+        display: none !important;
+    }
+}
+
+/*Carrito e compras*/
+.submenu-carrito{
+    position: relative;
+}
+
+#carrito{
+    display: none;
+}
+
+.submenu-carrito:hover #carrito{
+    display: block;
+    position: absolute;
+    right:0;
+    top:100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 300px;
+}
