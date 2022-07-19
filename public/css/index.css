@@ -36,3 +36,8 @@
     min-height: 400px;
     min-width: 300px;
 }
+
+/* Para ocultar contenido */
+.oculto{
+    display: none;
+}
