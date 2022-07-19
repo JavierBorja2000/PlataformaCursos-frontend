@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
     <title>Home</title>
 </head>
-<body class="oculto">
+<body>
     <header class="flex justify-between sticky top-0 items-center w-full min-h-[8vh] navbar navbar-expand-lg shadow-md py-2 px-10 bg-gray-50 z-50" >
         <div class="grow-0">
-            <a href="#" class="text-decoration-none">        
+            <a href="./home.html" class="text-decoration-none">        
                 <p class="uppercase tracking-widest text-gray-800 font-bold text-xl">Learn<span class="text-violet-500">TO</span>GO</p> 
             </a>
         </div>
@@ -37,12 +37,12 @@
             <ul class="panel-d justify-end align-center hidden sm:flex">
                 <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-2 py-2 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="./miscursos.html">Mis cursos</a></li>
                 <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-2 py-2 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="./perfil.html">Perfil</a></li>
-                <li class="h-full "><button class="text-decoration-none inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out" onclick="CerrarSesion();">Cerrar Sesion</button></li>
+                <li class="h-full "><a class="text-decoration-none inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out" href="#">Cerrar Sesion</a></li>
             </ul>
             <ul class="panel-m fixed bottom-0 right-0 min-h-[90vh] w-1/2 flex flex-col py-5 sm:hidden bg-gray-50 transition duration-300 ease-in-out z-50">
                 <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="./miscursos.html">Mis cursos</a></li>
                 <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="./perfil.html">Perfil</a></li>
-                <li><button class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight  hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" onclick="CerrarSesion();">Cerrar Sesion</button></li>
+                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight  hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="#">Cerrar Sesion</a></li>
             </ul>
             <button class="panel-btn hamburger hamburger--spin" type="button">
                 <span class="hamburger-box">
@@ -54,30 +54,17 @@
 
     <main>
         <div class="max-w max-w-7xl mx-auto">
-            <!-- Hero -->
-            <div class="hero bg-[url('../assets/img/hero.jpg')] bg-cover bg-right h-[250px] sm:h-[400px] sm:bg-center relative">
-                <div class="hidden sm:block min-w-[340px] max-w-[400px] h-[183px] p-6 bg-white absolute top-5 left-10">
-                    <p class="text-2xl lg:text-4xl font-semibold mb-2">Un Aprendizaje Interesante</p>
-                    <p class="text-lg font-normal">Habilidades para tu presente (y tu futuro). Da tus primeros pasos con nosotros.</p>
+            <div class="flex flex-col w-full xl:px-10 items-center px-2">
+                <div class="mt-6 w-full md:w-1/2 py-6">
+                    <h1 class="text-center uppercase text-4xl font-semibold py-10">Tus cursos</h1>
+                    
                 </div>
-            </div>
-
-            <div class="px-6 mt-8">
-                <h1 class="text-2xl font-semibold">Una amplia selección de cursos</h1>
- 
-                <div class="relative">
-                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                        <svg aria-hidden="true" class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </div>
-                    <input type="search" id="default-search" class="block max-w-[630px] p-4 pl-10 mt-4 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-none focus:border-none " placeholder="Buscar..." required>
-                </div>
-
             </div>
         </div>
     </main>
-
     <script src="../js/estudiante/UI.js" type="module"></script>
-    <script src="../js/estudiante/home.js"></script>
+    <script src="../js/estudiante/cursosComprados.js"></script>
+    <script src="../js/estudiante/validaciones.js"></script>
     <script src="../js/estudiante/auxiliar.js"></script>
     <script src="../js/cookies.js"></script>
 </body>

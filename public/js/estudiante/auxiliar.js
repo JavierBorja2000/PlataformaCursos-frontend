@@ -2,6 +2,7 @@ var url_base = "https://localhost:7188/api/";
 var url_estudiante = url_base + "Estudiante";
 var url_token = url_base + "Token";
 var url_usuario = url_base + "Usuario";
+var url_curso = url_base + "CursoEstudiante";
 
 const pagina = document.querySelector("body");
 
