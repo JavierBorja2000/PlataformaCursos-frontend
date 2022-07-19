@@ -1,5 +1,5 @@
 function Guardar(){
-    if (nombresInput.value.trim() === "" || apellidosInput.value.trim() === "" || telefonoInput.value.trim("") === "" || correoInput.value.trim() === "" || numTarjetaInput.value.trim("") === "") {
+    if (nombresInput.value.trim() === "" || apellidosInput.value.trim() === "" || telefonoInput.value.trim("") === "" || numTarjetaInput.value.trim("") === "") {
         ImprimirAlerta({
             msg: "Todos los campos son obligatorios",
             error: true
@@ -25,5 +25,5 @@ function Guardar(){
         return;
     }
 
-    // Put();
+    Put();
 }
