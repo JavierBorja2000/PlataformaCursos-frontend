@@ -60,39 +60,41 @@
                     <form id="frm" class="mb-10 lg:mb-5 px-4 lg:px-10">
                         <div class="mb-5 mt-6 flex flex-row justify-between items-center">
                             <label> Nombres</label>
-                            <input type="text" class="w-1/2 mt-2 py-1 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none">
+                            <input type="text" placeholder="Tu Nombre" class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="nombresInput">
                         </div>
                         <div class="mb-5 flex flex-row justify-between items-center">
                             <label> Apellidos</label>
-                            <input type="text" class="w-1/2 mt-2 py-1 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none">
+                            <input type="text" placeholder="Tu Apellido" class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="apellidosInput">
                         </div>
                         <div class="mb-5 flex flex-row justify-between items-center">
                             <label> Telefono</label>
-                            <input type="tel" class="w-1/2 mt-2 py-1 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none">
+                            <input type="tel"  placeholder="Tu Telefono"class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="telefonoInput">
                         </div>
                         <div class="mb-5 flex flex-row justify-between items-center">
                             <label> Nit</label>
-                            <input type="tel" class="w-1/2 mt-2 py-1 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none">
+                            <input type="tel"  placeholder="Tu Nit"class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="nitInput">
                         </div>
                         <div class="mb-5 flex flex-row justify-between items-center">
                             <label> Correo</label>
-                            <input type="tel" class="w-1/2 mt-2 py-1 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none">
+                            <input type="text" placeholder="Tu Correo" class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="correoInput">
                         </div>
                         <div class="mb-5 flex flex-row justify-between items-center">
                             <label> Número de tarjeta</label>
-                            <input type="tel" class="w-1/2 mt-2 py-1 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none">
+                            <input type="text" placeholder="Tu Numero de Tarjeta" class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="numTarjetaInput">
                         </div>
                         <div class="pt-5 flex flex-col items-center"> 
-                            <input type="button" class="text-decoration-none px-6 py-2.5 bg-violet-800 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-violet-900 hover:shadow-lg focus:bg-violet-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-violet-900 active:shadow-lg transition duration-150 ease-in-out" value="Guardar" >
+                            <span id="alerta" class="font-bold mb-5"></span>
+                            <input type="button" class="text-decoration-none px-6 py-2.5 bg-violet-800 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-violet-900 hover:shadow-lg focus:bg-violet-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-violet-900 active:shadow-lg transition duration-150 ease-in-out" value="Guardar" onclick="Guardar();" >
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </main>
-    <script src="../js/publico/publico.js"></script>
-    <script src="../js/estudiante/fetch.js"></script>
+    <script src="../js/estudiante/UI.js" type="module"></script>
+    <script src="../js/estudiante/estudiante.js"></script>
     <script src="../js/estudiante/validaciones.js"></script>
     <script src="../js/estudiante/auxiliar.js"></script>
+    <script src="../js/cookies.js"></script>
 </body>
 </html>
