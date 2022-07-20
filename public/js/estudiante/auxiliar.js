@@ -7,15 +7,12 @@ var url_curso = url_base + "CursoEstudiante";
 const pagina = document.querySelector("body");
 
 function CerrarSesion() {
-    deleteCookie("correo");
     deleteCookie("token");
     window.location.href = "/public/pages_publico/home.html";
 }
 
 function ImprimirAlerta(respuesta) {
     const alerta = document.querySelector("#alerta");
-
-    console.log(alerta)
 
     if (respuesta.error) {
         if (alerta.classList.contains("text-green-600")) {
@@ -48,9 +45,6 @@ function ValidarToken(rol) {
 
     fetch(url_usuario, {
         method: "POST",
-        body: JSON.stringify({
-            Correo: getCookie("correo")
-        }),
         headers: {
             "Authorization": `Bearer ${token}`,
             "Accept": "application/json",
@@ -69,6 +63,6 @@ function ValidarToken(rol) {
             window.location.href = "../pages_publico/home.html";
         }
         
-        pagina.classList.remove("oculto");
+        pagina.classList.remove("hidden");
     });
 }

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', e => {
 })
 
 function ObtenerDatos() {
-    fetch(url_estudiante + "/" + getCookie("correo"), {
+    fetch(url_estudiante, {
         method: "GET",
         headers: {
             "Authorization": `Bearer ${token}`,
@@ -54,7 +54,6 @@ function Put(){
             Apellidos: apellidosInput.value,
             Telefono: parseInt(telefonoInput.value),
             Nit: nitInput.value,
-            Correo: getCookie("correo"),
             NumTarjeta: parseInt(numTarjetaInput.value),
         }),
         headers: {

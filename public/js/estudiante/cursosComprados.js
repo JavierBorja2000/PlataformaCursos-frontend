@@ -7,10 +7,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
 function ObtenerCursos(){
     fetch(url_curso, {
-        method: "POST",
-        body: JSON.stringify({
-            Correo: getCookie("correo")
-        }),
+        method: "GET",
         headers: {
             "Authorization": `Bearer ${token}`,
             "Accept": "application/json",
