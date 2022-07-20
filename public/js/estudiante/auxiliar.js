@@ -3,6 +3,7 @@ var url_estudiante = url_base + "Estudiante";
 var url_token = url_base + "Token";
 var url_usuario = url_base + "Usuario";
 var url_curso = url_base + "CursoEstudiante";
+var url_facturas = url_base + "Facturas";
 
 const pagina = document.querySelector("body");
 
