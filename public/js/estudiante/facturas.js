@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', e => {
         }
     ]
 
+    // ObtenerFacturas();
     ImprimirFacturas(facturas);
 })
 
