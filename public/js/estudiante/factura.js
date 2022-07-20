@@ -74,17 +74,18 @@ function ImprimirFactura(factura) {
 
     factura.cursos.forEach(curso => {
         const fila = document.createElement("tr"); 
+        fila.classList.add("border-y", "border-violet-500", "text-center");
         
         const nombreCurso = document.createElement("td"); 
-        nombreCurso.classList.add("border", "border-violet-800", "px-3", "py-1");
+        nombreCurso.classList.add("px-3", "py-1");
         nombreCurso.textContent = curso.nombre;
 
         const descripcion = document.createElement("td"); 
-        descripcion.classList.add("border", "border-violet-800", "px-3", "py-1");
+        descripcion.classList.add("px-3", "py-1");
         descripcion.textContent = curso.descripcion;
 
         const costo = document.createElement("td"); 
-        costo.classList.add("border", "border-violet-800", "px-3", "py-1");
+        costo.classList.add("px-3", "py-1");
         costo.textContent = curso.costo;
 
         fila.appendChild(nombreCurso);
