@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', e => {
     ObtenerEstudiante();
 })
 
+document.addEventListener('click', e => {
+    if (e.target.matches(".borrar-curso")) {
+        setTimeout(() => {
+            ObtenerCarrito();
+        }, 500);   
+    }
+})
+
 function ObtenerCarrito(){
     fetch(url_carrito, {
         method: "GET",
@@ -69,7 +77,7 @@ function ImprimirCarrito(cursos){
         acciones.classList.add("px-5", "py-2", "items-center", "text-center");
 
         const btnEliminar = document.createElement("button");
-        btnEliminar.classList.add("px-5", "py-1", "bg-red-600", "my-2", "text-white", "rounded", "font-semibold");
+        btnEliminar.classList.add("px-5", "py-1", "bg-red-600", "my-2", "text-white", "rounded", "font-semibold", "borrar");
         btnEliminar.textContent = "Eliminar";
         btnEliminar.addEventListener("click", () => {
             EliminarCurso(curso.idCurso);
