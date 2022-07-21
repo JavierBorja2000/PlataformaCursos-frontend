@@ -2,6 +2,16 @@
 .panel-btn{
     margin-top: 3px !important;
 }
+
+.hamburger{
+    padding: 0 10px !important;
+}
+.hamburger-inner,
+.hamburger-inner::after,
+.hamburger-inner::before{
+    width: 35px !important;
+}
+
 .panel-m{
     transform: translateX(100%);
 }
@@ -35,4 +45,14 @@
     padding: 20px;
     min-height: 400px;
     min-width: 300px;
+}
+
+/*Carrito compras*/
+.borrar-curso {
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
