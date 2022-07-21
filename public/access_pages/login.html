@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
+    <title>Iniciar sesión</title>
+</head>
+<body>
+    <header class="flex justify-between sticky top-0 items-center w-full min-h-[8vh] navbar navbar-expand-lg shadow-md py-2 px-10 bg-gray-50 z-50" >
+        <div class="grow-0">
+            <a href="#" class="text-decoration-none">        
+                <p class="uppercase tracking-widest text-gray-800 font-bold text-xl">Learn<span class="text-violet-500">TO</span>GO</p> 
+            </a>
+        </div>
+        <nav class="flex justify-end align-center w-full grow">
+            <div class="mr-5 submenu-carrito bg-gray-50">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="#111827" width="28px" height="100%"><path d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z"/></svg>
+                <div id="carrito" class="bg-gray-50">
+                    <table id="lista-carrito" class="table-fixed">
+                        <thead>
+                            <tr class="border-b border-inherit">
+                                <th class="w-2/5 p-4">Nombre</th>
+                                <th class="w-2/5 p-4">Precio</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <a href="#" id="vaciar-carrito" class="w-full text-decoration-none inline-block mt-2 px-6 py-2 border-2 border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 text-center transition duration-150 ease-in-out">Vaciar Carrito</a>
+                </div>
+            </div>
+            <ul class="panel-d justify-end align-center hidden sm:flex">
+                <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-6 py-2 border-2 border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="/public/access_pages/login.html">Iniciar Sesion</a></li>
+                <li class="h-full "><a class="text-decoration-none inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out" href="/public/access_pages/elegir_usuario.html">Registrate</a></li>
+            </ul>
+            <ul class="panel-m fixed bottom-0 right-0 min-h-[90vh] w-1/2 flex flex-col py-5 sm:hidden bg-gray-50 transition duration-300 ease-in-out z-50">
+                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="/public/access_pages/login.html">Iniciar Sesion</a></li>
+                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight  hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="/public/access_pages/elegir_usuario.html">Registrate</a></li>
+            </ul>
+            <button class="panel-btn hamburger hamburger--spin" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </nav> 
+    </header>
+    <main>
+        <div class="text-gray-800 antialiased px-4 py-6 flex flex-col justify-center">
+            <div class="relative py-3 mx-auto text-center">
+                <span class="text-2xl font-semibold">Iniciar sesión</span>
+                <div class="relative mt-4 bg-white shadow-md sm:rounded-lg text-left">
+                    <div class="h-2 bg-violet-500 rounded-t-md"></div>
+                    <div class="py-6 px-8">
+                        <label class="block font-semibold">Correo electrónico<label>
+                        <input id="usuario" type="text" placeholder="Correo electrónico" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        <label class="block mt-3 font-semibold">Contraseña<label>
+                        <input id="clave" type="password" placeholder="Contraseña" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        <div class="flex justify-center items-baseline">
+                            <button class="mt-4 bg-violet-500 text-white py-2 px-6 mb-3 rounded-lg  hover:bg-black" onclick="Post();">Login</button>
+                        </div>
+                        <div class="flex justify-center items-baseline">
+                            <a href="/public/access_pages/elegir_usuario.html" class="text-sm hover:underline">¿No tienes una cuenta? Regístrate.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/publico/publico.js" type="module"></script>   
+</body>
+</html>
+
+<script>
+
+    var url="https://localhost:44362/api/Token";
+
+    function Post()
+    {
+        fetch(url, {
+            method: "POST",
+            body: JSON.stringify({
+                correo: document.getElementById("usuario").value,
+                clave: document.getElementById("clave").value}),
+            headers:{
+                'Accept' : "application/json",
+                "Content-Type":"application/json",
+            }
+        }).then(function(response){
+            if(response.ok){
+                return response.text();
+            }else{
+                console.log(Data);
+            }
+        }).then(function(Data){
+            console.log(Data);
+            document.getElementById("usuario").value="";
+            document.getElementById("clave").value="";
+        })
+    }
+</script>
