@@ -49,6 +49,7 @@ function ImprimirFacturas(facturas){
 
     if(facturas.length === 0){
         listadoVacio.textContent = "No hay facturas todavía";
+        return;
     }
 
     tabla.classList.remove("hidden");
