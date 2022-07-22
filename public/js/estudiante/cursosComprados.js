@@ -21,6 +21,39 @@ function ObtenerCursos(){
             console.log(response)
         }
     }).then(function (Data) {
-        console.log(Data)
+        if(Data.length === 0){
+            document.querySelector("#listadoVacio").textContent = "No has comprado cursos todavía"
+        }
+        else {
+            imprimirCursos(Data)
+        }
     });
+}
+
+function imprimirCursos(data) {
+    limpiarListadoCursos()
+
+    const $listadoCursos = document.querySelector("#listado_cursos")
+    const $templateCard = document.querySelector("#card_curso-template").content
+    const fragment = document.createDocumentFragment()
+
+    data.forEach(curso => {
+        const clone = $templateCard.cloneNode(true);
+
+        clone.querySelector("#curso_titulo").textContent = curso.nombre
+        clone.querySelector("#curso_instructor").textContent = `${curso.instructor.nombres} ${curso.instructor.apellidos}`
+        fragment.appendChild(clone)
+    });
+
+    $listadoCursos.appendChild(fragment)
+}
+
+
+//limpia listado de cursos
+function limpiarListadoCursos() {
+    const $listadoCursos = document.querySelector("#listado_cursos")
+
+    while ($listadoCursos.firstChild) {
+        $listadoCursos.removeChild($listadoCursos.firstChild);
+    }
 }
