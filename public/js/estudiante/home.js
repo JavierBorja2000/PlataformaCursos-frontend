@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', e => {
     ValidarToken("Estudiante");
     cargarCursos()
 
+    document.addEventListener('click', e => {
+        if(e.target.matches("#curso_titulo")){
+            e.preventDefault()
+            localStorage.setItem("idCursoSolicitado", e.target.dataset.id) 
+            location.href = "curso_individual.html"
+        }
+    })
 })
 
 function cargarCursos() {
@@ -30,6 +37,7 @@ function imprimirCursos(data) {
     data.forEach(curso => {
         const clone = $templateCard.cloneNode(true);
 
+        clone.querySelector("#curso_titulo").dataset.id = curso.idCurso
         clone.querySelector("#curso_titulo").textContent = curso.nombre
         clone.querySelector("#curso_instructor").textContent = `${curso.instructor.nombres} ${curso.instructor.apellidos}`
 

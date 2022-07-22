@@ -12,7 +12,7 @@
 <body>
     <header class="flex justify-between sticky top-0 items-center w-full min-h-[8vh] navbar navbar-expand-lg shadow-md py-2 px-10 bg-gray-50 z-50" >
         <div class="grow-0">
-            <a href="#" class="text-decoration-none">        
+            <a href="/public/pages_publico/home.html" class="text-decoration-none">        
                 <p class="uppercase tracking-widest text-gray-800 font-bold text-xl">Learn<span class="text-violet-500">TO</span>GO</p> 
             </a>
         </div>
@@ -31,7 +31,7 @@
                         <tbody></tbody>
                     </table>
 
-                    <a href="#" id="vaciar-carrito" class="w-full text-decoration-none inline-block mt-2 px-6 py-2 border-2 border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 text-center transition duration-150 ease-in-out">Vaciar Carrito</a>
+                    <a href="#" id="ir_carrito" class="w-full text-decoration-none inline-block mt-2 px-6 py-2 border-2 border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 text-center transition duration-150 ease-in-out">Ir al Carrito</a>
                 </div>
             </div>
             <ul class="panel-d justify-end align-center hidden sm:flex">
@@ -64,7 +64,7 @@
                             <p id="message_form" class="text-sm font-bold"></p>
                         </div>
                         <div class="flex justify-center items-baseline">
-                            <button class="mt-4 bg-violet-500 text-white py-2 px-6 mb-3 rounded-lg  hover:bg-black" onclick="Post();">Login</button>
+                            <button class="mt-4 text-white py-2 px-6 mb-3 rounded-lg bg-gray-900 hover:bg-violet-500 transition-all duration-300" onclick="Post();">Login</button>
                         </div>
                         <div class="flex justify-center items-baseline">
                             <a href="/public/access_pages/elegir_usuario.html" class="text-sm hover:underline">¿No tienes una cuenta? Regístrate.</a>
@@ -74,12 +74,12 @@
             </div>
         </div>
     </main>
-    <script src="../js/publico/publico.js" type="module"></script>   
+    <script src="../js/acceso/header_acceso.js" type="module"></script>   
 </body>
 </html>
 
 <script>
-    var url="https://localhost:7188/api/Token";
+    var url="http://25.52.127.25/api/Token";
 
     //Se obtienen los inputs
     const campoUsuario = document.querySelector('#usuario');

@@ -1,4 +1,4 @@
-var url_base = "https://localhost:7188/api/";
+var url_base = "http://25.52.127.25/api/";
 var url_estudiante = url_base + "Estudiante";
 var url_token = url_base + "Token";
 var url_usuario = url_base + "Usuario";

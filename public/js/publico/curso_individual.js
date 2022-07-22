@@ -1,21 +1,25 @@
-import filtrarBusquedas from "../funcionalidades/filtrar_busquedas.js";
-import menuDesplegable from "../funcionalidades/menu_hamburguesa.js";
-import iniciandoCarritoCompras from "../funcionalidades/carrito_compras.js";
 
 let idCursoSolicitado
 
+let urlCursoPublico = "http://25.52.127.25/api/CursoPublico/"
+let urlCursoComprado = "http://25.52.127.25/api/CursoComprado/"
+
+let token
+
 document.addEventListener('DOMContentLoaded', e => {
-    menuDesplegable(".panel-btn", ".panel-m", ".menulink")
-    filtrarBusquedas("#filtrar_curso", ".card_curso")
-    iniciandoCarritoCompras()
-
     idCursoSolicitado = localStorage.getItem("idCursoSolicitado") || 0
-
+    token = getCookie("token")
     try{
-        if(getCookie("token")){
-            console.log("hay un token");
+        if(token){
+            const options = {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+
+            getDatosCurso(urlCursoComprado, options)
         }else{
-            getDatosCursoPublico()
+            getDatosCurso(urlCursoPublico)
         }
     }catch(ex){
         console.log(`Error ${ex.message}`);
@@ -32,8 +36,8 @@ document.addEventListener('DOMContentLoaded', e => {
     })
 })
 
-function getDatosCursoPublico(){
-    fetch(`https://localhost:7188/api/CursoPublico/${idCursoSolicitado}`)
+function getDatosCurso(url, options = null){
+    fetch(`${url}${idCursoSolicitado}`, options)
         .then(response => response.json())
         .then(response => JSON.parse(JSON.stringify(response)))
         .then(response => completarPagina(response))

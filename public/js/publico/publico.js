@@ -2,7 +2,7 @@ import filtrarBusquedas from "../funcionalidades/filtrar_busquedas.js";
 import menuDesplegable from "../funcionalidades/menu_hamburguesa.js";
 import iniciandoCarritoCompras from "../funcionalidades/carrito_compras.js";
 
-let URLCursosPublicos = "https://localhost:7188/api/CursoPublico"
+let URLCursosPublicos = "http://25.52.127.25/api/CursoPublico"
 
 document.addEventListener('DOMContentLoaded', e => {
     menuDesplegable(".panel-btn", ".panel-m", ".menulink")
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', e => {
         if(e.target.matches("#curso_titulo")){
             e.preventDefault()
             localStorage.setItem("idCursoSolicitado", e.target.dataset.id) 
-            location.href = "http://127.0.0.7:5500/public/pages_publico/curso_individual.html"
+            location.href = "curso_individual.html"
         }
     })
 
@@ -58,11 +58,14 @@ function imprimirCursos(data){
 
 //limpia listado de cursos
 function limpiarListadoCursos(){
-    const $listadoCursos = document.querySelector("#listado_cursos")
+    const $listadoCursos = document.querySelector("#listado_cursos") || null
 
-    while ($listadoCursos.firstChild) {
-        $listadoCursos.removeChild($listadoCursos.firstChild);
+    if($listadoCursos !== null){
+        while ($listadoCursos.firstChild) {
+            $listadoCursos.removeChild($listadoCursos.firstChild);
+        }
     }
+    
 }
 
 
