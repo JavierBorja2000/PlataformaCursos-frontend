@@ -56,20 +56,58 @@
                 <div class="relative mt-4 bg-white shadow-md sm:rounded-lg text-left">
                     <div class="h-2 bg-violet-500 rounded-t-md"></div>
                     <div class="py-3 px-6">
-                        <input type="text" placeholder="Nombres" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
-                        <input type="text" placeholder="Apellidos" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
-                        <input type="text" placeholder="Correo electrónico" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
-                        <input type="password" placeholder="Contraseña" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
-
-                        <div class="grid md:grid-cols-2 md:gap-6">
-                            <input type="text" placeholder="Nivel de estudios" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
-                            <input type="text" placeholder="Certificaciones" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        <div class="md:flex md:items-center mb-1">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Nombres*</label>
+                            <input id="nombres" =type="text" placeholder="Nombres" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
                         </div>
-                        <div>
-                            <input type="text" placeholder="Experiencia" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        <div class="md:flex md:items-center mb-1">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Apellidos*</label>
+                            <input id="apellidos" type="text" placeholder="Apellidos" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        </div>
+                        <div class="md:flex md:items-center mb-1">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Email*</label>
+                            <input id="correo" type="email" placeholder="Correo electrónico" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        </div>
+
+                        <label class=" text-gray-500 font-bold">Contraseña*</label>
+                        <div class="grid md:grid-cols-2 md:gap-6 mb-1">
+                            <input id="clave" type="password" placeholder="Ingresa tu contraseña" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                            <input id="clave2" type="password" placeholder="Confirma tu contraseña" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        </div>
+                        <div class="md:flex md:items-center mb-1">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Estudios*</label>
+                            <input id="estudios" type="text" placeholder="Nivel de estudios" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        </div>
+                        <div class="md:flex md:items-center mb-1">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Certificaciones</label>
+                            <input id="certificaciones" type="text" placeholder="Certificaciones" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        </div>
+                        <div class="md:flex md:items-center mb-1">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Experiencia</label>
+                            <input id="experiencia" type="text" placeholder="Experiencia" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        </div>
+                      
+                        <div class="md:flex md:items-center mb-1">
+                            <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4">Número de cuenta*</label>
+                            <input id="numCuenta" type="number" placeholder="Número de cuenta" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        </div>
+                        <div class="md:flex md:items-center mb-1">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Banco*</label>
+                            <input id="banco" type="text" placeholder="Banco" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        </div>
+                        <div class="md:flex md:items-center mb-1">
+                            <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4">Nombre de cuenta*</label>
+                            <input id="nomCuenta" type="text" placeholder="Cuenta a nombre de" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        </div>
+                        <div class="md:flex md:items-center mb-1">
+                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">Tipo*</label>
+                            <input id="tipoCuenta" type="text" placeholder="Tipo de cuenta" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        </div>
+                        <div class="flex justify-center mt-2">
+                            <p id="message_form" class="text-sm font-bold"></p>
                         </div>
                         <div class="flex justify-center items-baseline">
-                            <button class="mt-4 bg-violet-500 text-white py-2 px-6 rounded-lg">Registrarse</button>
+                            <button class="mt-4 bg-violet-500 text-white py-2 px-6 rounded-lg hover:bg-black" onclick="ValidarForm();">Registrarse</button>
                         </div>
                     </div>
                 </div>
@@ -77,5 +115,6 @@
         </div>
     </main>
     <script src="../js/publico/publico.js" type="module"></script>
+    <script src="../js/acceso/registro_instructor.js"></script>
 </body>
 </html>

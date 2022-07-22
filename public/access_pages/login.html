@@ -60,6 +60,9 @@
                         <input id="usuario" type="text" placeholder="Correo electrónico" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
                         <label class="block mt-3 font-semibold">Contraseña<label>
                         <input id="clave" type="password" placeholder="Contraseña" class=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md">
+                        <div class="flex justify-center mt-2">
+                            <p id="message_form" class="text-sm font-bold"></p>
+                        </div>
                         <div class="flex justify-center items-baseline">
                             <button class="mt-4 bg-violet-500 text-white py-2 px-6 mb-3 rounded-lg  hover:bg-black" onclick="Post();">Login</button>
                         </div>
@@ -76,8 +79,27 @@
 </html>
 
 <script>
+    var url="https://localhost:7188/api/Token";
 
-    var url="https://localhost:44362/api/Token";
+    //Se obtienen los inputs
+    const campoUsuario = document.querySelector('#usuario');
+    const campoClave = document.querySelector('#clave');
+
+     //Eventos en los inputs
+     campoUsuario.addEventListener('blur',() => {
+        restaurarCampo("usuario");
+    });
+
+    campoClave.addEventListener('blur',() => {
+        restaurarCampo("clave");
+    });
+
+    function restaurarCampo(id)
+    {
+        document.getElementById("usuario").style.borderColor = "#e5e7eb";
+        document.getElementById("clave").style.borderColor = "#e5e7eb";
+        document.getElementById("message_form").innerHTML = "";
+    }
 
     function Post()
     {
@@ -91,15 +113,38 @@
                 "Content-Type":"application/json",
             }
         }).then(function(response){
-            if(response.ok){
-                return response.text();
-            }else{
-                console.log(Data);
-            }
+                
+            return response.json();
+
         }).then(function(Data){
             console.log(Data);
-            document.getElementById("usuario").value="";
-            document.getElementById("clave").value="";
+            
+            if (Data.token) {
+                setCookie("token", Data.token);
+
+                if(Data.rol == "Estudiante")
+                {
+                    window.location.href = "../pages_estudiante/home.html";
+                }
+                else if(Data.rol == "Instructor")
+                {
+                    document.getElementById("message_form").style.color = "green";
+                    document.getElementById("message_form").innerHTML = "Inicio de sesión como instructor";
+                }
+                else if(Data.rol == "Administrador")
+                {
+                    document.getElementById("message_form").style.color = "green";
+                    document.getElementById("message_form").innerHTML = "Inicio de sesión como administrador";
+                }
+            }
+            else if(Data.msg && Data.error){
+                document.getElementById("message_form").style.color = "red";
+                document.getElementById("message_form").innerHTML = Data.msg;
+                document.getElementById("usuario").style.borderColor = "red";
+                document.getElementById("clave").style.borderColor = "red";
+            }
         })
     }
+    
 </script>
+<script src="../js/cookies.js"></script>
