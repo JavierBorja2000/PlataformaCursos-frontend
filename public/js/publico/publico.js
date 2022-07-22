@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', e => {
     iniciandoCarritoCompras()
     cargarCursos(URLCursosPublicos)
 
+    document.addEventListener('click', e => {
+        if(e.target.matches("#curso_titulo")){
+            e.preventDefault()
+            localStorage.setItem("idCursoSolicitado", e.target.dataset.id) 
+            location.href = "http://127.0.0.7:5500/public/pages_publico/curso_individual.html"
+        }
+    })
+
 })
 
 function cargarCursos(url){
@@ -31,6 +39,7 @@ function imprimirCursos(data){
     data.forEach(curso => {
         const clone = $templateCard.cloneNode(true);
         
+        clone.querySelector("#curso_titulo").dataset.id = curso.idCurso
         clone.querySelector("#curso_titulo").textContent = curso.nombre
         clone.querySelector("#curso_instructor").textContent = `${curso.nombres} ${curso.apellidos}`
         clone.querySelector("#curso_precio").textContent = curso.costo
