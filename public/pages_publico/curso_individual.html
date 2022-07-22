@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
+    <title>Home</title>
+</head>
+<body>
+    <header class="flex justify-between sticky top-0 items-center w-full min-h-[8vh] navbar navbar-expand-lg shadow-md py-2 px-10 bg-gray-50 z-50" >
+        <div class="grow-0">
+            <a href="#" class="text-decoration-none">        
+                <p class="uppercase tracking-widest text-gray-800 font-bold text-xl">Learn<span class="text-violet-500">TO</span>GO</p> 
+            </a>
+        </div>
+        <nav class="flex justify-end align-center w-full grow">
+            <div class="mr-5 submenu-carrito bg-gray-50">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="#111827" width="28px" height="100%"><path d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z"/></svg>
+                <div id="carrito" class="bg-gray-50">
+                    <table id="lista-carrito" class="table-fixed">
+                        <thead>
+                            <tr class="border-b border-inherit">
+                                <th class="w-2/5 p-4">Nombre</th>
+                                <th class="w-2/5 p-4">Precio</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <a href="#" id="ir_carrito" class="w-full text-decoration-none inline-block mt-2 px-6 py-2 border-2 border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 text-center transition duration-150 ease-in-out">Ir al Carrito</a>
+                </div>
+            </div>
+            <ul class="panel-d justify-end align-center hidden sm:flex">
+                <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-6 py-2 border-2 border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="#">Iniciar Sesion</a></li>
+                <li class="h-full "><a class="text-decoration-none inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out" href="#">Registrate</a></li>
+            </ul>
+            <ul class="panel-m fixed bottom-0 right-0 min-h-[92vh] w-1/2 flex flex-col py-5 sm:hidden bg-gray-50 transition duration-300 ease-in-out z-50">
+                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="#">Iniciar Sesion</a></li>
+                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight  hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="#">Registrate</a></li>
+            </ul>
+            <button class="panel-btn hamburger hamburger--spin" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </nav> 
+    </header>
+    
+    <main>
+        <!-- contenedor info cursos -->
+        <section class="bg-gray-900 text-gray-100 py-8 px-8">
+            <!-- wrapper -->
+            <div class="min-w-[370px] max-w-7xl mx-auto">
+                <div class="w-full xl:w-3/4">
+                    <h1 id="curso_titulo" class="text-4xl font-bold"></h1>
+                    <p id="curso_descripcion" class="mt-4 text-lg font-semibold"></p>
+                    <div class="flex items-center mt-2.5 ">
+                        <span id="curso_estrellas" class=" text-yellow-300 text-base font-bold pr-2">5.0</span>
+                        <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Second star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Third star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fourth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fifth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="mt-2 text-sm font-semibold">Creado por: <span id="instructor_nombre"></span> </p>
+                </div>
+                
+            </div>
+        </section>
+
+        
+        <section class="bg-gray-50 text-gray-900 py-8 px-8 max-h-screen">
+            <!-- wrapper -->
+            <div class="min-w-[370px] max-w-7xl mx-auto relative z-10">
+                <!-- flotante agregar al carrito -->
+                <div id="contenedor_agregarcarrito" class="mx-auto">
+                    <div class="max-w-sm p-6 border border-inherit mx-auto xl:absolute xl:right-28 xl:top-[-106px] shadow-lg bg-white">
+                        <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" fill="#7C3AED"><path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+                            <p id="mensaje_compra" class="ml-2 text-base font-bold ">Que esperas para empezar a aprender. </p>
+                        </div>
+                        <button id="agregar_carrito" class="w-full tracking-wider mt-4 text-white bg-gray-900 hover:bg-violet-600 focus:outline-none font-medium text-base px-5 py-2.5 text-center transition-all duration-300">Agregar Carrito</button>
+                     </div>
+                </div>
+                 
+                <!-- contenedor info lecciones -->
+                <section class="mt-5">
+                    <h2 class="text-2xl font-bold">Contenido del curso</h2>
+                    <div id="listado_lecciones" class="py-5">
+
+                    </div>
+                </section>
+            </div>
+        </section>
+        
+    </main>
+
+
+    <!-- card-leccion -->
+    <template id="card_leccion-template">
+        <button id="card_leccion" disabled class="flex justify-between w-full max-w-xl bg-gray-200 border border-inherit text-gray-900 mb-1 py-4 px-6 hover:bg-gray-300">
+            <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"  width="16px" fill="#7C3AED"><path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"/></svg>
+                <p id="leccion_titulo" class="ml-2 text-base font-semibold"></p>
+            </div>
+            <div>
+                <p class="inline-block text-gray-500 mr-1"><span id="leccion_horas"></span>h</p>
+                <p class="inline-block text-gray-500"><span id="leccion_min"></span>min</p>
+            </div>
+        </button>
+    </template>
+
+    <script src="../js/publico/curso_individual.js" type="module"></script>
+    <script src="../js/cookies.js"></script>
+</body>
+</html>
