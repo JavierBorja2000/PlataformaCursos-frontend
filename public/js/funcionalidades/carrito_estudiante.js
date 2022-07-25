@@ -48,7 +48,6 @@ function ObtenerCarrito() {
         }
     }).then(function (Data) {
         carritoCompras = Data;
-        console.log(carritoCompras)
         carritoHTML();
     });
 }
