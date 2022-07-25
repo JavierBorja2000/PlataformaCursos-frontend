@@ -6,6 +6,7 @@ var url_curso = url_base + "CursoComprado";
 var url_facturas = url_base + "Facturas";
 var url_carrito = url_base + "Carrito";
 var url_home = url_base + "CursoEstudiante";
+var url_compra = url_base + "ConfirmarCompra";
 
 const pagina = document.querySelector("body");
 

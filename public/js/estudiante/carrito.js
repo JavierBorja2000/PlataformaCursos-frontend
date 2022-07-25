@@ -145,23 +145,23 @@ function EliminarCurso(id){
 }
 
 function ConfirmarCompra(){
-    // fetch(url_facturas, {
-    //     method: "PUT",
-    //     headers: {
-    //         "Authorization": `Bearer ${token}`,
-    //         "Accept": "application/json",
-    //         "Content-Type": "application/json"
-    //     }
-    // }).then(function (response) {
-    //     if (response.ok) {
-    //         return response.json();
-    //     }
-    //     else {
-    //         console.log(response)
-    //     }
-    // }).then(function (Data) {
-        
-    // });
+    fetch(url_compra, {
+        method: "PUT",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    }).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        else {
+            console.log(response)
+        }
+    }).then(function (Data) {
+        console.log(Data)
+    });
 
     window.location.href = './miscursos.html';
 }
