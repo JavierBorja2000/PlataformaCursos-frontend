@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', e => {
         }
         
         agregarPublicacion(nuevaPregunta);
+        e.target.reset()
     })
 })
 
