@@ -17,29 +17,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
     console.log(id)
 
-    var factura = {
-        id: 1,
-        fecha: '10/10/2022',
-        nit: 1028,
-        nombres: 'Lesly',
-        apellidos: "Dubón",
-        cursos: [
-            {
-                nombre: "A",
-                descripcion: "A",
-                costo: 30
-            },
-            {
-                nombre: "B",
-                descripcion: "B",
-                costo: 90
-            }
-        ],
-        total: 120
-    }
-
-    // ObtenerFactura();
-    ImprimirFactura(factura);
+    ObtenerFactura();
 })
 
 function ObtenerFactura() {
@@ -63,28 +41,30 @@ function ObtenerFactura() {
 }
 
 function ImprimirFactura(factura) {
-    console.log(factura)
 
-    NumFactura.textContent = factura.id;
-    Fecha.textContent = factura.fecha;
+    NumFactura.textContent = factura.idPedido;
+    factura.fecha = new Date(factura.fecha);
+    const offset = factura.fecha.getTimezoneOffset();
+    factura.fecha = new Date(factura.fecha.getTime() - (offset * 60 * 1000));
+    Fecha.textContent = factura.fecha.toISOString().split('T')[0];
     Nit.textContent = factura.nit;
     Nombres.textContent = factura.nombres;
     Apellidos.textContent = factura.apellidos;
     Total.textContent = factura.total;
 
-    factura.cursos.forEach(curso => {
-        const fila = document.createElement("tr"); 
+    factura.cursos_detalle.forEach(curso => {
+        const fila = document.createElement("tr");
         fila.classList.add("border-y", "border-violet-500", "text-center");
-        
-        const nombreCurso = document.createElement("td"); 
+
+        const nombreCurso = document.createElement("td");
         nombreCurso.classList.add("px-3", "py-1");
         nombreCurso.textContent = curso.nombre;
 
-        const descripcion = document.createElement("td"); 
+        const descripcion = document.createElement("td");
         descripcion.classList.add("px-3", "py-1");
         descripcion.textContent = curso.descripcion;
 
-        const costo = document.createElement("td"); 
+        const costo = document.createElement("td");
         costo.classList.add("px-3", "py-1");
         costo.textContent = curso.costo;
 

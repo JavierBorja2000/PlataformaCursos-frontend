@@ -6,25 +6,10 @@ const listado = document.querySelector("#listado");
 
 document.addEventListener('DOMContentLoaded', e => {
     ValidarToken("Estudiante");
-
-    var facturas = [
-        {
-            id: 1,
-            fecha: '10/10/2022',
-            total: 120
-        },
-        {
-            id: 2,
-            fecha: '12/10/2022',
-            total: 50
-        }
-    ]
-
-    // ObtenerFacturas();
-    ImprimirFacturas(facturas);
+    ObtenerFacturas();
 })
 
-function ObtenerFacturas(){
+function ObtenerFacturas() {
     fetch(url_facturas, {
         method: "GET",
         headers: {
@@ -44,10 +29,8 @@ function ObtenerFacturas(){
     });
 }
 
-function ImprimirFacturas(facturas){
-    console.log(facturas)
-
-    if(facturas.length === 0){
+function ImprimirFacturas(facturas) {
+    if (facturas.length === 0) {
         listadoVacio.textContent = "No hay facturas todavía";
         return;
     }
@@ -55,29 +38,33 @@ function ImprimirFacturas(facturas){
     tabla.classList.remove("hidden");
 
     facturas.forEach(factura => {
-        const fila = document.createElement("tr"); 
+        const fila = document.createElement("tr");
         fila.classList.add("border-y", "border-violet-500", "text-center");
-        
-        const numero = document.createElement("td"); 
+
+        const numero = document.createElement("td");
         numero.classList.add("px-3", "py-2");
-        numero.textContent = factura.id;
+        numero.textContent = factura.idPedido;
 
-        const fecha = document.createElement("td"); 
+        const fecha = document.createElement("td");
         fecha.classList.add("px-3", "py-2");
-        fecha.textContent = factura.fecha;
 
-        const total = document.createElement("td"); 
+        factura.fecha = new Date(factura.fecha);
+        const offset = factura.fecha.getTimezoneOffset();
+        factura.fecha = new Date(factura.fecha.getTime() - (offset * 60 * 1000));
+        fecha.textContent = factura.fecha.toISOString().split('T')[0];
+
+        const total = document.createElement("td");
         total.classList.add("px-3", "py-2");
         total.textContent = factura.total;
-        
-        const acciones = document.createElement("td"); 
+
+        const acciones = document.createElement("td");
         acciones.classList.add("py-2", "text-center");
-        
+
         const btnVerDetalles = document.createElement("button");
         btnVerDetalles.textContent = "Ver detalles";
-        btnVerDetalles.classList.add("text-center", "text-violet-600", "hover:text-violet-700" ,"font-bold");
+        btnVerDetalles.classList.add("text-center", "text-violet-600", "hover:text-violet-700", "font-bold");
         btnVerDetalles.addEventListener("click", () => {
-            VerDetalles(factura.id);
+            VerDetalles(factura.idPedido);
         });
 
         acciones.appendChild(btnVerDetalles);
@@ -90,6 +77,6 @@ function ImprimirFacturas(facturas){
     });
 }
 
-function VerDetalles(id){
-    window.location.href = "./factura.html?id="+id;
+function VerDetalles(id) {
+    window.location.href = "./factura.html?id=" + id;
 }
