@@ -27,11 +27,12 @@ document.addEventListener('DOMContentLoaded', e => {
 
     document.addEventListener('click', e => {
         if(e.target.matches("#card_leccion")){
-            if(e.target.disabled){
-                console.log("no esta comprado");
-            }else(
-                console.log("Esta comprado")
-            )
+            if(e.target.disabled) return 
+
+            localStorage.setItem("idLeccionSolicitado", e.target.dataset.idLeccion) 
+            localStorage.setItem("nomInstructor", document.querySelector("#instructor_nombre").textContent)
+            location.href = "../pages_estudiante/leccion.html"
+            
         }
     })
 })
