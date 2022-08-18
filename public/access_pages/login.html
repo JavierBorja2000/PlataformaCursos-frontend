@@ -128,8 +128,9 @@
                 }
                 else if(Data.rol == "Instructor")
                 {
-                    document.getElementById("message_form").style.color = "green";
-                    document.getElementById("message_form").innerHTML = "Inicio de sesión como instructor";
+                    window.location.href = "../pages_instructor/home.html"
+                    // document.getElementById("message_form").style.color = "green";
+                    // document.getElementById("message_form").innerHTML = "Inicio de sesión como instructor";
                 }
                 else if(Data.rol == "Administrador")
                 {
