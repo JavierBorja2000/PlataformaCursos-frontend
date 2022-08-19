@@ -2,9 +2,11 @@ import filtrarBusquedas from "../funcionalidades/filtrar_busquedas.js";
 import menuDesplegable from "../funcionalidades/menu_hamburguesa.js";
 import iniciandoCarritoCompras from "../funcionalidades/carrito_compras.js";
 
+var token
 let URLCursosPublicos = "http://25.52.127.25/api/CursoPublico"
 
 document.addEventListener('DOMContentLoaded', e => {
+    redireccinarCuenta()
     menuDesplegable(".panel-btn", ".panel-m", ".menulink")
     filtrarBusquedas("#filtrar_curso", ".card_curso")
     iniciandoCarritoCompras()
@@ -69,3 +71,31 @@ function limpiarListadoCursos(){
 }
 
 
+//redireccionamiento a cuenta por token existente
+function redireccinarCuenta() {
+    token = getCookie("token");
+
+    if (!token) return 
+
+    fetch("http://25.52.127.25/api/Usuario", {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    }).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+    }).then (function (Data){
+        
+        if(Data.rol === "Estudiante"){
+            window.location.href = "../pages_estudiante/home.html";
+        }else if(Data.rol === "Instructor"){
+            window.location.href = "../pages_instructor/home.html";
+        }
+        
+        pagina.classList.remove("hidden");
+    });
+}
