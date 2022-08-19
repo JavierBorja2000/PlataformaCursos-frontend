@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
+    <title>Home</title>
+</head>
+<body class="hidden">
+    <header class="flex justify-between sticky top-0 items-center w-full min-h-[8vh] navbar navbar-expand-lg shadow-md py-2 px-10 bg-gray-50 z-50" >
+        <div class="grow-0">
+            <a href="#" class="text-decoration-none">        
+                <p class="uppercase tracking-widest text-gray-800 font-bold text-xl">Learn<span class="text-violet-500">TO</span>GO</p> 
+            </a>
+        </div>
+        <nav class="flex justify-end align-center w-full grow">
+            <ul class="panel-d justify-end align-center hidden sm:flex">
+                <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-2 py-2 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="./miscursos.html">Mis cursos</a></li>
+                <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-2 py-2 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="./facturas.html">Estadisticas</a></li>
+                <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-2 py-2 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="./perfil.html">Perfil</a></li>
+                <li class="h-full "><button class="text-decoration-none inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out" onclick="CerrarSesion();">Cerrar Sesion</button></li>
+            </ul>
+            <ul class="panel-m fixed bottom-0 right-0 min-h-[92vh] w-1/2 flex flex-col py-5 sm:hidden bg-gray-50 transition duration-300 ease-in-out z-50">
+                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="./miscursos.html">Mis cursos</a></li>
+                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="./facturas.html">Estadisticas</a></li>
+                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="./perfil.html">Perfil</a></li>
+                <li><button class="w-full block text-left text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight  hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" onclick="CerrarSesion();">Cerrar Sesion</button></li>
+            </ul>
+            <button class="panel-btn hamburger hamburger--spin" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </nav> 
+    </header>
+
+    <main>
+        <div class="max-w max-w-7xl mx-auto">
+            <div class="flex flex-col w-full xl:px-10 items-center px-2">
+                <div class="shadow-md mt-6 w-full md:w-1/2 py-6">
+                    <h1 class="text-center uppercase text-4xl font-semibold py-10">Tu perfil</h1>
+                    <form id="frm" class="mb-10 lg:mb-5 px-4 lg:px-10">
+                        <div class="mb-5 mt-6 flex flex-row justify-between items-center">
+                            <label> Nombres*</label>
+                            <input type="text" placeholder="Tu Nombre" class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="nombresInput">
+                        </div>
+                        <div class="mb-5 flex flex-row justify-between items-center">
+                            <label> Apellidos*</label>
+                            <input type="text" placeholder="Tu Apellido" class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="apellidosInput">
+                        </div>
+                        <div class="mb-5 flex flex-row justify-between items-center">
+                            <label> Nivel de Estudios*</label>
+                            <input type="tel"  placeholder="Tu Nivel de Estudios"class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="nivelEstudiosInput">
+                        </div>
+                        <div class="mb-5 flex flex-row justify-between items-center">
+                            <label> Certificaciones</label>
+                            <input type="tel"  placeholder="Tus Certificaciones"class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="certificacionesInput">
+                        </div>
+                        <div class="mb-5 flex flex-row justify-between items-center">
+                            <label> Experiencia</label>
+                            <input type="text" placeholder="Tu Experiencia" class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="experienciaInput">
+                        </div>
+                        <div class="mb-5 flex flex-row justify-between items-center">
+                            <label> Número de cuenta*</label>
+                            <input type="text" placeholder="Tu Número de cuenta" class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="numCuentaInput">
+                        </div>
+                        <div class="mb-5 flex flex-row justify-between items-center">
+                            <label> Banco*</label>
+                            <input type="text" placeholder="Banco de la cuenta" class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="nomBancoInput">
+                        </div>
+                        <div class="mb-5 flex flex-row justify-between items-center">
+                            <label> Nombre de cuenta*</label>
+                            <input type="text" placeholder="Nombre de la cuenta" class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="nomCuentaInput">
+                        </div>
+                        <div class="mb-5 flex flex-row justify-between items-center">
+                            <label> Tipo de cuenta*</label>
+                            <input type="text" placeholder="Tipo de la Cuenta" class="w-1/2 mt-2 py-1 px-2 bg-gray-50 rounded-sm border border-gray-300 focus:ring-none focus:border-none" id="tipoCuentaInput">
+                        </div>
+                        <div class="pt-5 flex flex-col items-center"> 
+                            <span id="alerta" class="font-bold mb-5"></span>
+                            <input type="button" class="text-decoration-none px-6 py-2.5 bg-violet-800 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-violet-900 hover:shadow-lg focus:bg-violet-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-violet-900 active:shadow-lg transition duration-150 ease-in-out" value="Guardar" onclick="Guardar();" >
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>    
+
+    <script src="../js/instructor/home.js" type="module"></script>
+    <script src="../js/instructor/perfil.js"></script>
+    <script src="../js/instructor/validaciones.js"></script>
+    <script src="../js/estudiante/auxiliar.js"></script>
+    <script src="../js/cookies.js"></script>
+</body>
+</html>
