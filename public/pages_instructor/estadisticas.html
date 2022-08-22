@@ -38,55 +38,33 @@
     </header>
 
     <main>
-        <!-- wrapper -->
-        <div class="min-w-[370px] max-w-7xl mx-auto pb-10">
-            <!-- Hero -->
-            <div class="hero bg-[url('../assets/img/hero2.jpg')] bg-cover bg-right h-[250px] sm:h-[400px] sm:bg-center relative">
-                <div class="hidden sm:block min-w-[340px] max-w-[400px] h-[183px] p-6 bg-white absolute top-5 left-10 shadow-lg">
-                    <p class="text-2xl sm:text-4xl font-semibold mb-2">Ven a enseñar con nosotros</p>
-                    <p class="text-lg font-normal">Sé instructor y cambia vidas, incluida la tuya</p>
-                </div>
-            </div>
+        <div class="max-w max-w-7xl mx-auto">
+            <div class="flex flex-col w-full xl:px-10 items-center px-2">
+                <div class="mt-1 w-full md:w-4/5 py-6">
+                    <h1 class="text-center uppercase text-4xl font-semibold py-10 text-gray-900">Estadísticas</h1>
 
-            
-            <div class="px-6 mt-10">
-                <h2 class="text-3xl sm:text-4xl font-semibold text-center">Hay tantas razones para empezar</h2>
-                <div class="my-8 flex flex-col sm:flex-row">
-                    <div class="flex flex-col items-center mb-8 sm:mb-0 text-center">
-                        <img width="100" height="100" src="../assets/img/imgInfoIntructor1.jpg" alt="">
-                        <p class="font-bold text-lg">Enseña a tu manera</p>
-                        <p>Publica el curso que quieras, como quieras y ten siempre el control de tu propio contenido.</p>
-                    </div>
-                    <div class="flex flex-col items-center mb-8 sm:ml-10 sm:mb-0 text-center">
-                        <img width="100" height="100" src="../assets/img/imgInfoIntructor2.jpg" alt="">
-                        <p class="font-bold text-lg">Inspira a los estudiantes</p>
-                        <p>Enseña lo que sabes y ayuda a los estudiantes a explorar sus intereses, adquirir nuevas habilidades y avanzar en sus carreras.</p>
-                    </div>
-                    <div class="flex flex-col items-center mb-8 sm:ml-10 sm:mb-0 text-center">
-                        <img width="100" height="100" src="../assets/img/imgInfoIntructor3.jpg" alt="">
-                        <p class="font-bold text-lg">Consigue una recompensa</p>
-                        <p>Amplía tu red profesional, desarrolla tus conocimientos y gana dinero con cada inscripción de pago.</p>
+                    <div class="overflow-x-auto relative rounded-lg">
+                        <p id="listadoVacio" class="text-center text-xl"></p>
+
+                        <table id="tabla" class="w-full text-sm text-center text-gray-700 hidden">
+                            <thead class="text-sm text-white uppercase bg-violet-500">
+                                <tr>
+                                    <th class="py-3 px-6">Nombre del curso</th>
+                                    <th class="py-3 px-6">Estudiantes inscritos</th>
+                                    <th class="py-3 px-6">Ingresos generados</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="listado"></tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-
-            <div class="bg-violet-700 text-white py-10">
-                <p class="font-bold text-3xl uppercase text-center">Con Mas de 54M de estudiantes</p>
-            </div>
-
-            <div class="mt-10 py-7">
-                <div class="flex flex-col sm:flex-row justify-between items-center max-w-3xl rounded-lg shadow-xl px-4 py-6 mx-auto">
-                    <h3 class="font-bold text-lg mb-4 sm:mb-0">Empieza a compartir conocimento Ya!</h3>
-                    <a class="text-decoration-none inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out" href="">Crear un Curso</a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-
-    
+        </div>                            
+    </main>    
 
     <script src="../js/instructor/home.js" type="module"></script>
+    <script src="../js/instructor/estadisticas.js"></script>
     <script src="../js/estudiante/auxiliar.js"></script>
     <script src="../js/cookies.js"></script>
 </body>
