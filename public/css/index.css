@@ -56,3 +56,9 @@
     color: white;
     font-weight: bold;
 }
+
+@media screen and (min-width: 1280px) {
+    .btn-action:hover .icono{
+        width: auto;
+    }
+ }
