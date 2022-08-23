@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
-    <title>Estadisticas</title>
+    <title>Home</title>
 </head>
 <body class="hidden">
     <header class="flex justify-between sticky top-0 items-center w-full min-h-[8vh] navbar navbar-expand-lg shadow-md py-2 px-10 bg-gray-50 z-50" >
@@ -18,15 +18,9 @@
         </div>
         <nav class="flex justify-end align-center w-full grow">
             <ul class="panel-d justify-end align-center hidden sm:flex">
-                <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-2 py-2 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="./miscursos.html">Mis cursos</a></li>
-                <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-2 py-2 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="./estadisticas.html">Estadisticas</a></li>
-                <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-2 py-2 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="./perfil.html">Perfil</a></li>
                 <li class="h-full "><button class="text-decoration-none inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out" onclick="CerrarSesion();">Cerrar Sesion</button></li>
             </ul>
             <ul class="panel-m fixed bottom-0 right-0 min-h-[92vh] w-1/2 flex flex-col py-5 sm:hidden bg-gray-50 transition duration-300 ease-in-out z-50">
-                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="./miscursos.html">Mis cursos</a></li>
-                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="./estadisticas.html">Estadisticas</a></li>
-                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="./perfil.html">Perfil</a></li>
                 <li><button class="w-full block text-left text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight  hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" onclick="CerrarSesion();">Cerrar Sesion</button></li>
             </ul>
             <button class="panel-btn hamburger hamburger--spin" type="button">
@@ -41,7 +35,7 @@
         <div class="max-w max-w-7xl mx-auto">
             <div class="flex flex-col w-full xl:px-10 items-center px-2">
                 <div class="mt-1 w-full md:w-4/5 py-6">
-                    <h1 class="text-center uppercase text-4xl font-semibold py-10 text-gray-900">Estadísticas</h1>
+                    <h1 class="text-center uppercase text-4xl font-semibold py-10 text-gray-900">Tus cursos</h1>
 
                     <div class="overflow-x-auto relative rounded-lg">
                         <p id="listadoVacio" class="text-center text-xl"></p>
@@ -49,9 +43,12 @@
                         <table id="tabla" class="w-full text-sm text-center text-gray-700 hidden">
                             <thead class="text-sm text-white uppercase bg-violet-500">
                                 <tr>
+                                    <th class="py-3 px-6">ID</th>
                                     <th class="py-3 px-6">Nombre del curso</th>
-                                    <th class="py-3 px-6">Estudiantes inscritos</th>
-                                    <th class="py-3 px-6">Ingresos generados</th>
+                                    <th class="py-3 px-6">Costo</th>
+                                    <th class="py-3 px-6">Estado</th>
+                                    <th class="py-3 px-6">Cantidad Estudiantes</th>
+                                    <th class="py-3 px-6"></th>
                                 </tr>
                             </thead>
 
@@ -60,13 +57,13 @@
                     </div>
                 </div>
             </div>
-        </div>                            
+        </div>
     </main>    
 
-    <script src="../js/instructor/home.js" type="module"></script>
-    <script src="../js/instructor/estadisticas.js"></script>
+    <script src="../js/admin/home.js" type="module"></script>
+    <script src="../js/admin/cursos.js"></script>
     <script src="../js/estudiante/auxiliar.js"></script>
-    <script src="../js/instructor/url.js"></script>
+    <script src="../js/admin/url.js"></script>
     <script src="../js/cookies.js"></script>
 </body>
 </html>
