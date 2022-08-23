@@ -1,0 +1,1 @@
+var url_curso_admin = url_base + "CursoAdmin";

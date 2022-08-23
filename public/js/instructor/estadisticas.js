@@ -7,29 +7,7 @@ const listado = document.querySelector("#listado");
 document.addEventListener('DOMContentLoaded', e => {
     ValidarToken("Instructor");
 
-    var estadisticas = [
-        {
-            idCurso: 1,
-            nombre: "CURSO de PROGRAMACIÓN 2020 COMPLETO con DFD desde cero",
-            numAlumnos: 100,
-            ingresos: 1200.60
-        },
-        {
-            idCurso: 2,
-            nombre: "CURSO de HTML5 DESDE CERO",
-            numAlumnos: 60,
-            ingresos: 1202
-        },
-        {
-            idCurso: 3,
-            nombre: "Curso Básico de Javascript desde 0",
-            numAlumnos: 42,
-            ingresos: 420.78
-        },
-    ]
-
-    //ObtenerEstadisticas();
-    ImprimirEstadisticas(estadisticas)
+    ObtenerEstadisticas();
 })
 
 function ObtenerEstadisticas() {
