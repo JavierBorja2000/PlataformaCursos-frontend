@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
+        <title>Crear curso</title>
+    </head>
+    <body>
+        <header class="flex justify-between sticky top-0 items-center w-full min-h-[8vh] navbar navbar-expand-lg shadow-md py-2 px-10 bg-gray-50 z-50" >
+            <div class="grow-0">
+                <a href="/public/pages_instructor/home.html" class="text-decoration-none">        
+                    <p class="uppercase tracking-widest text-gray-800 font-bold text-xl">Learn<span class="text-violet-500">TO</span>GO</p> 
+                </a>
+            </div>
+            <nav class="flex justify-end align-center w-full grow">
+                <ul class="panel-d justify-end align-center hidden sm:flex">
+                    <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-2 py-2 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="./miscursos.html">Mis cursos</a></li>
+                    <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-2 py-2 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="#">Estadisticas</a></li>
+                    <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-2 py-2 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="./perfil.html">Perfil</a></li>
+                    <li class="h-full "><button class="text-decoration-none inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out" onclick="CerrarSesion();">Cerrar Sesion</button></li>
+                </ul>
+                <ul class="panel-m fixed bottom-0 right-0 min-h-[92vh] w-1/2 flex flex-col py-5 sm:hidden bg-gray-50 transition duration-300 ease-in-out z-50">
+                    <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="./miscursos.html">Mis cursos</a></li>
+                    <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="#">Estadisticas</a></li>
+                    <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="./perfil.html">Perfil</a></li>
+                    <li><button class="w-full block text-left text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight  hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" onclick="CerrarSesion();">Cerrar Sesion</button></li>
+                </ul>
+                <button class="panel-btn hamburger hamburger--spin" type="button">
+                    <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </nav> 
+        </header>
+        <main>
+            <div class="max-w max-w-7xl mx-auto">
+                <div class="flex flex-col w-full xl:px-10 items-center px-2">
+                    <div class="mt-1 w-full md:w-4/5 py-6">
+                        <h1 class="text-center uppercase text-3xl font-semibold py-2 text-gray-900">Información del curso</h1>
+                        <div class="flex items-center justify-center p-3">
+                            <div class="mx-auto w-full ">
+                                <div class="mb-5">
+                                    <label class="mb-1 block text-base font-medium">Ingresa un nombre para tu curso</label>
+                                    <input id="nombre" type="text" placeholder="Nombre del curso" class=" border w-full h-5 px-3 py-5 mt-1  hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md text-gray-500 font-medium">
+                                </div>
+                                <div class="mb-5">
+                                    <label class="mb-1 block text-base font-medium">Agrega una descripción del curso</label>
+                                    <input id="descripcion" type="text" placeholder="Descripción del curso" class=" border w-full h-5 px-3 py-5 mt-1  hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md text-gray-500 font-medium">
+                                </div>
+
+                                <div class="mb-5">
+                                    <label class="mb-1 block text-base font-medium">Precio del curso (Q.)</label>
+                                    <input id="costo" type="number" min="0" step="any" placeholder="Precio del curso" class=" border w-full h-5 px-3 py-5 mt-1  hover:outline-none focus:outline-none focus:ring-1 focus:ring-violet-500 rounded-md text-gray-500 font-medium">
+                                    <label class="mt-1 block text-sm font-medium text-gray-500">Nota: El sistema aumentará el costo en un 20% al precio final</label>
+                                </div>
+                                <span id="alerta" class="font-bold mb-5"></span>
+                                <div class="flex justify-center">
+                                    
+                                    <button class="hover:bg-gray-900  rounded-md bg-violet-500  py-2 px-8 text-base font-semibold text-white" onclick="Validar();">
+                                        Guardar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        
+        <script src="../js/instructor/home.js" type="module"></script>
+        <script src="../js/estudiante/auxiliar.js"></script>
+        <script src="../js/instructor/CrearEditarCurso.js"></script>
+        <script src="../js/cookies.js"></script>
+    </body>
+
+</html>
