@@ -1,5 +1,9 @@
 var token;
 
+const listadoVacio = document.querySelector("#listadoVacio");
+const tabla = document.querySelector("#tabla");
+const listado = document.querySelector("#listado");
+
 document.addEventListener('DOMContentLoaded', e => {
     ValidarToken("Administrador");
     ObtenerDatos();
