@@ -11,15 +11,16 @@ document.addEventListener('DOMContentLoaded', e => {
 
     document.addEventListener('click', e => {
         if (e.target.matches("#card_leccion")) {
-
-            localStorage.setItem("idLeccionSolicitado", e.target.dataset.idLeccion)
             localStorage.setItem("nomInstructor", document.querySelector("#instructor_nombre").textContent)
+            location.href = "../pages_admin/leccion.html?id="+e.target.dataset.idLeccion
         }
         if (e.target.matches("#btn-bloquearCurso") || e.target.matches("#btn-bloquearCurso *")) {
             //cambiarEstado();
         }
         if (e.target.matches("#btn-eliminarCurso") || e.target.matches("#btn-eliminarCurso *")) {
-            eliminarCurso();
+            var res = confirm("¿Seguro que desea eliminar este curso?");
+
+            if(res)  eliminarCurso();
         }
     })
 })
@@ -69,6 +70,8 @@ function completarPagina(data) {
         clone.querySelector("#leccion_titulo").textContent = leccion.titulo
         clone.querySelector("#leccion_horas").textContent = leccion.duracionHoras
         clone.querySelector("#leccion_min").textContent = leccion.duracionMinutos
+
+        clone.querySelector("#card_leccion").disabled = false
 
         fragment.appendChild(clone)
     });
