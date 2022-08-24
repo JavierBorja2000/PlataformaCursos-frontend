@@ -1,4 +1,4 @@
-var url="http://25.52.127.25/api/Instructor";
+var url="https://localhost:7188/api/Instructor";
 
 //Se obtienen los inputs
 const campoNombres = document.querySelector('#nombres');

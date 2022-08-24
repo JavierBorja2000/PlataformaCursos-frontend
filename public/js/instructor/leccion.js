@@ -1,26 +1,40 @@
+import menu_desplegable from "../funcionalidades/menu_hamburguesa.js";
 let URLLeccion = "https://localhost:7188/api/Leccion/"
 let URLPreguntas = "https://localhost:7188/api/Pregunta"
+let URLRespuesta = "https://localhost:7188/api/Respuesta"
 let idLeccion;
 
 const $ = selector => document.querySelector(selector)
-const $formPregunta = $("#formPregunta")
 
+var token 
 
 document.addEventListener('DOMContentLoaded', e => {
+    menu_desplegable(".panel-btn", ".panel-m", ".menulink")
+
+    ValidarToken("Instructor");
+    token = getCookie("token")
     idLeccion = localStorage.getItem("idLeccionSolicitado")
     cargarInfoLeccion()
     cargarInfoPreguntas()
 
-    $formPregunta.addEventListener('submit', e => {
-        e.preventDefault()
+    document.addEventListener('submit', e => {
+        if(e.target.matches(".formRespuesta")){
+            e.preventDefault()
 
-        const nuevaPregunta = {
-            idLeccion: idLeccion,
-            contenido: e.target.pregunta.value
+            const nuevaRespuesta = {
+                contenido: e.target.respuesta.value,
+                idPregunta: e.target.parentElement.dataset.idPregunta,
+            }
+            
+            agregarRespuesta(nuevaRespuesta);
         }
-        
-        agregarPublicacion(nuevaPregunta);
-        e.target.reset()
+    })
+
+    document.addEventListener('click', e => {
+        if(e.target.matches(".btn-responder")){
+            const $formRespuesta = e.target.nextElementSibling
+            $formRespuesta.classList.toggle("hidden")
+        }
     })
 })
 
@@ -33,6 +47,7 @@ async function cargarInfoLeccion(){
     }
     try{
         let data = await fetch(`${URLLeccion}${idLeccion}`, options).then(response => response.json())
+        console.log(data);
         imprimirInfoLeccion(data);
     }catch(ex){
         console.log(ex.message);
@@ -54,8 +69,8 @@ async function cargarInfoPreguntas(){
     }
 }
 
-async function agregarPublicacion(publicacion){
-    fetch(`${URLPreguntas}`,{
+async function agregarRespuesta(publicacion){
+    fetch(`${URLRespuesta}`,{
         method: 'POST',
         body: JSON.stringify(publicacion),
         headers: {
@@ -79,7 +94,7 @@ function imprimirInfoLeccion(data){
 
 function imprimirInfoPreguntas(data){
     limpiarHTMLPreguntas()
-    
+
     const $listadoPreguntas = $("#listado_preguntas")
     const $templatePregunta = $("#card_pregunta-template").content
     const $templateRespuesta = $("#card_respuesta-template").content
@@ -88,6 +103,7 @@ function imprimirInfoPreguntas(data){
     data.forEach(objPregunta => {
         const pregunta = $templatePregunta.cloneNode(true);
 
+        pregunta.querySelector(".pregunta").dataset.idPregunta = objPregunta.idPregunta
         pregunta.querySelector(".pregunta_usuario").textContent = `${objPregunta.nombresEstudiante} ${objPregunta.apellidosEstudiante}`
         pregunta.querySelector(".pregunta_contenido").textContent = objPregunta.contenido
 
