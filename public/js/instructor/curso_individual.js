@@ -1,6 +1,6 @@
 import menu_desplegable from "../funcionalidades/menu_hamburguesa.js";
 
-let urlCursoPublico = "http://25.52.127.25/api/CursoPublico/"
+let urlCursoPublico = "https://localhost:7188/api/CursoPublico/"
 let idCursoSolicitado
 let token
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
             localStorage.setItem("idLeccionSolicitado", e.target.dataset.idLeccion) 
             localStorage.setItem("nomInstructor", document.querySelector("#instructor_nombre").textContent)
-            //location.href = "../pages_instructor/leccion.html"   
+            location.href = "../pages_instructor/leccion.html"   
         }
         if(e.target.matches("#btn-editarCurso")  || e.target.matches("#btn-editarCurso *")){
             //location.href = "../pages_instructor/editarCurso.html"   
