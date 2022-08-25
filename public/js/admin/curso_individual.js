@@ -55,7 +55,10 @@ function completarPagina(data) {
 
     if(data.estado === "I"){
         var estado = document.querySelector("#estado");
+        var btnBloquear = document.querySelector("#btn-bloquearCurso");
         estado.textContent = "Desbloquear";
+        btnBloquear.classList.remove("bg-red-600");
+        btnBloquear.classList.add("bg-green-600");
     }
 
     //listar lecciones
