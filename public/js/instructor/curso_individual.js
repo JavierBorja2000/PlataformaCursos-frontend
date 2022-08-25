@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', e => {
             window.location.href = "/public/pages_instructor/informacionCurso.html";
         }
         if(e.target.matches("#btn-eliminarCurso") || e.target.matches("#btn-eliminarCurso *")){
-            alert("el curso tiene estudiantes asignados")   
+            var res = confirm("¿Seguro que desea eliminar este curso?");
+            if(res)  eliminarCurso();  
         }
     })
 })
@@ -69,4 +70,22 @@ function completarPagina(data){
     });
 
     $listadoLecciones.appendChild(fragment)
+}
+
+function eliminarCurso(){
+    fetch(url_cursoInstructor + "/" + idCursoSolicitado, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    }).then(response => response.json())
+        .then(response => JSON.parse(JSON.stringify(response)))
+        .then(response => {
+            alert(response.msg)
+            if(response.error === false){
+                window.location.href = "/public/pages_instructor/miscursos.html"
+            }
+        })
 }
