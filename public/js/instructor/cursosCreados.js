@@ -6,6 +6,7 @@ const listado = document.querySelector("#listado");
 
 document.addEventListener('DOMContentLoaded', e => {
     ValidarToken("Instructor");
+    localStorage.removeItem("idEditar");
     ObtenerCursos();
 })
 
@@ -62,8 +63,10 @@ function ImprimirCursos(cursos) {
         const btnVerCurso = document.createElement("button");
         btnVerCurso.textContent = "Ir al curso";
         btnVerCurso.classList.add("text-center", "text-violet-600", "hover:text-violet-700", "font-bold");
+
         btnVerCurso.addEventListener("click", () => {
-            VerCurso(curso.idCurso);
+            localStorage.setItem("idCursoSolicitado", curso.idCurso) 
+            window.location.href = "/public/pages_instructor/curso_individual.html";
         });
 
         if(curso.estado == 'A'){

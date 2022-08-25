@@ -6,7 +6,7 @@ let token
 
 document.addEventListener('DOMContentLoaded', e => {
     menu_desplegable(".panel-btn", ".panel-m", ".menulink")
-
+    localStorage.removeItem("idEditar");
     idCursoSolicitado = localStorage.getItem("idCursoSolicitado") || 0
     token = getCookie("token")
     try{
@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', e => {
             location.href = "../pages_instructor/leccion.html"   
         }
         if(e.target.matches("#btn-editarCurso")  || e.target.matches("#btn-editarCurso *")){
-            //location.href = "../pages_instructor/editarCurso.html"   
+            localStorage.setItem("idEditar", idCursoSolicitado);
+            window.location.href = "/public/pages_instructor/informacionCurso.html";
         }
         if(e.target.matches("#btn-eliminarCurso") || e.target.matches("#btn-eliminarCurso *")){
             alert("el curso tiene estudiantes asignados")   

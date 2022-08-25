@@ -59,10 +59,7 @@
                                 </div>
                                 <span id="alerta" class="font-bold mb-5"></span>
                                 <div class="flex justify-center">
-                                    
-                                    <button class="hover:bg-gray-900  rounded-md bg-violet-500  py-2 px-8 text-base font-semibold text-white" onclick="Validar();">
-                                        Guardar
-                                    </button>
+                                    <button class="hover:bg-gray-900  rounded-md bg-violet-500 py-2 px-8 text-base font-semibold text-white" onclick="Validar();">Guardar</button>
                                 </div>
                             </div>
                         </div>
@@ -71,8 +68,13 @@
             </div>
         </main>
 
-        
+        <script type="text/javascript">
+            window.addEventListener('hashchange', function(){
+                localStorage.removeItem("idEditar");
+            });
+        </script>
         <script src="../js/instructor/home.js" type="module"></script>
+        <script src="../js/instructor/url.js"></script>
         <script src="../js/estudiante/auxiliar.js"></script>
         <script src="../js/instructor/CrearEditarCurso.js"></script>
         <script src="../js/cookies.js"></script>
