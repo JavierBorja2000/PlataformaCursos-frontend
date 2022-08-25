@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', e => {
             location.href = "../pages_admin/leccion.html?id="+e.target.dataset.idLeccion
         }
         if (e.target.matches("#btn-bloquearCurso") || e.target.matches("#btn-bloquearCurso *")) {
-            //cambiarEstado();
+            cambiarEstado();
         }
         if (e.target.matches("#btn-eliminarCurso") || e.target.matches("#btn-eliminarCurso *")) {
             var res = confirm("¿Seguro que desea eliminar este curso?");
@@ -98,7 +98,7 @@ function eliminarCurso(){
 }
 
 function cambiarEstado(){
-    fetch(`${url_curso_estado}/${idCursoSolicitado}`, {
+    fetch(`${url_curso_admin}/${idCursoSolicitado}`, {
         method: "PUT",
         headers: {
             "Authorization": `Bearer ${token}`,
