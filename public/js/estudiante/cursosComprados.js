@@ -30,7 +30,7 @@ function ObtenerCursos(){
         }
     }).then(function (Data) {
         if(Data.length === 0){
-            document.querySelector("#listadoVacio").textContent = "No has comprado cursos todavía"
+            document.querySelector("#listadoVacio").textContent = "No has comprado cursos todavía o no se encuentran disponibles"
         }
         else {
             imprimirCursos(Data)
