@@ -14,8 +14,9 @@ document.addEventListener('DOMContentLoaded', e => {
     ObtenerDatos();
 })
 
+
 function ObtenerDatos() {
-    fetch(`${url_instructor_admin}/${id}`, {
+    fetch(`${url_estudiante_admin}/${id}`, {
         method: "GET",
         headers: {
             "Authorization": `Bearer ${token}`,
@@ -37,7 +38,7 @@ function ObtenerDatos() {
 
 function ImprimirDatos(cursos) {
     if (cursos.length === 0) {
-        listadoVacio.textContent = "Aún no se ha creado ningún curso";
+        listadoVacio.textContent = "Aún no ha comprado ningún curso";
         return;
     }
 
@@ -47,33 +48,16 @@ function ImprimirDatos(cursos) {
         const fila = document.createElement("tr");
         fila.classList.add("border-y", "px-6");
 
-        const id_curso = document.createElement("td");
-        id_curso.classList.add("px-3", "py-2");
-        id_curso.textContent = curso.idCurso;
-
         const nombre = document.createElement("td");
         nombre.classList.add("px-3", "py-2");
         nombre.textContent = curso.nombre;
 
-        const costo = document.createElement("td");
-        costo.classList.add("px-3", "py-2");
-        costo.textContent = "Q. "+curso.costo;
+        const instructor = document.createElement("td");
+        instructor.classList.add("px-3", "py-2");
+        instructor.textContent = `${curso.instructor.nombres} ${curso.instructor.apellidos}`;
 
-        const estado = document.createElement("td");
-        estado.classList.add("px-3", "py-2", "font-medium");
-
-        if(curso.estado == 'A'){
-            estado.textContent = "Activo";
-            estado.style.color = "green";
-        }else{
-            estado.textContent = "Inactivo";
-            estado.style.color = "red";
-        }
-
-        fila.appendChild(id_curso);
         fila.appendChild(nombre);
-        fila.appendChild(costo);
-        fila.appendChild(estado);
+        fila.appendChild(instructor);
         listado.appendChild(fila);
     });
 }
