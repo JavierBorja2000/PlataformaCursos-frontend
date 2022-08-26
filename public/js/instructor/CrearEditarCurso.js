@@ -110,7 +110,7 @@ function Validar(){
             error: true
         })
         return;
-    }else if(costo.value < 1){
+    }else if(costo.value < 0){
         Alerta({
             msg: "El costo no debe tener un valor negativo",
             error: true
