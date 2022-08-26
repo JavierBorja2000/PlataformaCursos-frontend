@@ -7,8 +7,12 @@ document.addEventListener('DOMContentLoaded', e => {
     document.addEventListener('click', e => {
         if(e.target.matches("#curso_titulo")){
             e.preventDefault()
-            localStorage.setItem("idCursoSolicitado", e.target.dataset.id) 
-            location.href = "curso_individual.html"
+
+            if(e.target.dataset.estado === "A"){
+                localStorage.setItem("idCursoSolicitado", e.target.dataset.id) 
+                location.href = "curso_individual.html"
+            }
+            
         }
     })
 })
@@ -30,7 +34,7 @@ function ObtenerCursos(){
         }
     }).then(function (Data) {
         if(Data.length === 0){
-            document.querySelector("#listadoVacio").textContent = "No has comprado cursos todavía o no se encuentran disponibles"
+            document.querySelector("#listadoVacio").textContent = "No has comprado cursos todavía"
         }
         else {
             imprimirCursos(Data)
@@ -50,6 +54,18 @@ function imprimirCursos(data) {
 
         clone.querySelector("#curso_titulo").dataset.id = curso.idCurso
         clone.querySelector("#curso_titulo").textContent = curso.nombre
+
+        if(curso.estado === "I"){
+            clone.querySelector("#curso_estado").textContent = "Inactivo"
+            clone.querySelector("#curso_titulo").dataset.estado = "I"
+            clone.querySelector("#estrellas").classList.add("hidden")
+            clone.querySelector("#curso_titulo").classList.remove("cursor-pointer")
+            clone.querySelector("#div-anim").classList.remove("hover:translate-y-[-0.4rem]")
+        }
+        else{
+            clone.querySelector("#curso_titulo").dataset.estado = "A"
+        }
+        
         clone.querySelector("#curso_instructor").textContent = `${curso.instructor.nombres} ${curso.instructor.apellidos}`
         fragment.appendChild(clone)
     });
