@@ -95,14 +95,15 @@
     <!-- template de card cursos -->
     <template id="card_curso-template">
         <div
-            class="card_curso max-w-sm bg-white rounded-lg shadow-lg transition-all duration-300 ease-linear hover:translate-y-[-0.4rem]">
+            class="card_curso max-w-sm bg-white rounded-lg shadow-lg transition-all duration-300 ease-linear hover:translate-y-[-0.4rem]" id="div-anim">
             <div class="px-5 py-5 h-full flex flex-col">
                 <div>
                     <h5 id="curso_titulo" class="text-xl font-semibold tracking-tight text-gray-900 cursor-pointer"></h5>
                 </div>
                 <div>
                     <p id="curso_instructor" class="text-sm font-normal text-gray-500 mt-1.5"></p>
-                    <div class="flex items-center mt-2.5 mb-5">
+                    <p id="curso_estado" class="text-sm font-normal text-red-500 mt-1.5"></p>
+                    <div class="flex items-center mt-2.5 mb-5" id="estrellas">
                         <svg aria-hidden="true" class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <title>First star</title>

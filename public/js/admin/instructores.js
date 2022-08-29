@@ -79,8 +79,8 @@ function ImprimirDatos(instructores){
         const icono = document.createElement("div")
         icono.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 22V2H7a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3ZM8 6h8v2H8ZM6 19a1 1 0 0 1 .31-.71A.93.93 0 0 1 7 18h11v2H7a1 1 0 0 1-1-1Z" data-name="Layer 2"/></svg>`;
         
-        div.appendChild(numCursos);
         div.appendChild(icono);
+        div.appendChild(numCursos);
         href.appendChild(div)
         celda.appendChild(href);
         
