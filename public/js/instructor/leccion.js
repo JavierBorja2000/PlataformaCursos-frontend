@@ -1,7 +1,7 @@
 import menu_desplegable from "../funcionalidades/menu_hamburguesa.js";
-let URLLeccion = "https://localhost:7188/api/Leccion/"
-let URLPreguntas = "https://localhost:7188/api/Pregunta"
-let URLRespuesta = "https://localhost:7188/api/Respuesta"
+let URLLeccion = "http://25.52.127.25/api/Leccion/"
+let URLPreguntas = "http://25.52.127.25/api/Pregunta"
+let URLRespuesta = "http://25.52.127.25/api/Respuesta"
 let idLeccion;
 
 const $ = selector => document.querySelector(selector)

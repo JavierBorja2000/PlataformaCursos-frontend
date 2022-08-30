@@ -1,6 +1,6 @@
 import menu_desplegable from "../funcionalidades/menu_hamburguesa.js";
 
-let urlCursoPublico = "https://localhost:7188/api/CursoPublico/"
+let urlCursoPublico = "http://25.52.127.25/api/CursoPublico/"
 let idCursoSolicitado
 let token
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', e => {
         }
         if(e.target.matches("#btn-editarCurso")  || e.target.matches("#btn-editarCurso *")){
             localStorage.setItem("idEditar", idCursoSolicitado);
-            window.location.href = "/public/pages_instructor/informacionCurso.html";
+            window.location.href = "../pages_instructor/informacionCurso.html";
         }
         if(e.target.matches("#btn-eliminarCurso") || e.target.matches("#btn-eliminarCurso *")){
             var res = confirm("¿Seguro que desea eliminar este curso?");
@@ -168,7 +168,7 @@ function eliminarCurso(){
         .then(response => {
             alert(response.msg)
             if(response.error === false){
-                window.location.href = "/public/pages_instructor/miscursos.html"
+                window.location.href = "../pages_instructor/miscursos.html"
             }
         })
 }

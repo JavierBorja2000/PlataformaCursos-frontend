@@ -1,4 +1,4 @@
-var url="https://localhost:7188/api/Estudiante";
+var url="http://25.52.127.25/api/Estudiante";
 
 //Se obtienen los inputs
 const campoNombres = document.querySelector('#nombres');
@@ -77,7 +77,7 @@ function Post()
         }else{
             document.getElementById("message_form").style.color = "green";
             document.getElementById("message_form").innerHTML = Data.msg;
-            window.location.href = "/public/access_pages/login.html";
+            window.location.href = "../access_pages/login.html";
         }
     })
 }
@@ -159,6 +159,12 @@ function ValidarPassword(){
         document.getElementById("clave2").style.borderColor = "red";
         document.getElementById("message_form").style.color = "red";
         document.getElementById("message_form").innerHTML = "Los campos * no pueden estar vacíos";
+    }else if(ingreso1.length < 6 || ingreso2.length < 6)
+    {
+        document.getElementById("clave").style.borderColor = "red";
+        document.getElementById("clave2").style.borderColor = "red";
+        document.getElementById("message_form").style.color = "red";
+        document.getElementById("message_form").innerHTML = "La contraseña debe contener al menos 6 caracteres";
     }
     else
     {

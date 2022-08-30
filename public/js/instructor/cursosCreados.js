@@ -66,7 +66,7 @@ function ImprimirCursos(cursos) {
 
         btnVerCurso.addEventListener("click", () => {
             localStorage.setItem("idCursoSolicitado", curso.idCurso) 
-            window.location.href = "/public/pages_instructor/curso_individual.html";
+            window.location.href = "../pages_instructor/curso_individual.html";
         });
 
         if(curso.estado == 'A'){

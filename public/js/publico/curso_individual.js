@@ -1,8 +1,8 @@
 
 let idCursoSolicitado
 
-let urlCursoPublico = "https://localhost:7188/api/CursoPublico/"
-let urlCursoComprado = "https://localhost:7188/api/CursoComprado/"
+let urlCursoPublico = "http://25.52.127.25/api/CursoPublico/"
+let urlCursoComprado = "http://25.52.127.25/api/CursoComprado/"
 
 let token
 
