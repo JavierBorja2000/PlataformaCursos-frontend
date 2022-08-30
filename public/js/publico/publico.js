@@ -94,6 +94,8 @@ function redireccinarCuenta() {
             window.location.href = "../pages_estudiante/home.html";
         }else if(Data.rol === "Instructor"){
             window.location.href = "../pages_instructor/home.html";
+        }else if(Data.rol === "Administrador"){
+            window.location.href = "../pages_admin/home.html";
         }
         
         pagina.classList.remove("hidden");
