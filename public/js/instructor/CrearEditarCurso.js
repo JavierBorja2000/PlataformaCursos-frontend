@@ -3,7 +3,7 @@ var id_editar;
 
 document.addEventListener('DOMContentLoaded', e => {
     var url = new URL(window.location.href.toLowerCase());
-    id_editar = url.searchParams.get("id");
+    id_editar = localStorage.getItem("idEditar");
     ValidarToken("Instructor");
 
     if(id_editar != null){
@@ -72,8 +72,8 @@ function EditarCurso(){
             console.log(response)
         }
     }).then(function (Data) {
-        console.log(Data)
-        window.location.href = "/public/pages_instructor/miscursos.html";
+        localStorage.removeItem("idEditar");
+        window.location.href = "../pages_instructor/curso_individual.html";
     });
 };
 
@@ -99,7 +99,7 @@ function GuardarCurso(){
         }
     }).then(function(Data){
         console.log(Data);
-        window.location.href = "/public/pages_instructor/miscursos.html";
+        window.location.href = "../pages_instructor/miscursos.html";
     })
 };
 
@@ -110,7 +110,13 @@ function Validar(){
             error: true
         })
         return;
-    }else{
+    }else if(costo.value < 0){
+        Alerta({
+            msg: "El costo no debe tener un valor negativo",
+            error: true
+        })
+    }
+    else{
         DeterminarAccion();
     }
 }

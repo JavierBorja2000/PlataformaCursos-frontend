@@ -160,8 +160,8 @@ function ConfirmarCompra(){
             console.log(response)
         }
     }).then(function (Data) {
-        console.log(Data)
+        console.log(Data);
+        window.location.href = './miscursos.html';
     });
 
-    window.location.href = './miscursos.html';
 }
