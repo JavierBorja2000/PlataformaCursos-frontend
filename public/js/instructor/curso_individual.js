@@ -1,6 +1,6 @@
 import menu_desplegable from "../funcionalidades/menu_hamburguesa.js";
 
-let urlCursoPublico = "https://localhost:7188/api/CursoPublico/"
+let urlCursoPublico = "http://25.52.127.25/api/CursoPublico/"
 let idCursoSolicitado
 let token
 
