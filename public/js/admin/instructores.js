@@ -106,7 +106,8 @@ function ImprimirDatos(instructores){
         btnEliminar.textContent = "Eliminar";
         btnEliminar.classList.add("text-center", "text-white", "bg-red-600", "hover:bg-red-700", "font-bold", "px-2", "py-1", "rounded-md", "mr-2");
         btnEliminar.addEventListener("click", () => {
-            Eliminar(instructor.idInstructor);
+            var res = confirm("¿Seguro que desea eliminar el instructor?");
+            if(res) Eliminar(instructor.idInstructor);
         });
 
         if(instructor.estado == 'A'){

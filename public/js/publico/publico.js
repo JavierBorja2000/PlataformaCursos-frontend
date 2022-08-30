@@ -3,7 +3,7 @@ import menuDesplegable from "../funcionalidades/menu_hamburguesa.js";
 import iniciandoCarritoCompras from "../funcionalidades/carrito_compras.js";
 
 var token
-let URLCursosPublicos = "https://localhost:7188/api/CursoPublico"
+let URLCursosPublicos = "http://25.52.127.25/api/CursoPublico"
 
 document.addEventListener('DOMContentLoaded', e => {
     redireccinarCuenta()
@@ -77,7 +77,7 @@ function redireccinarCuenta() {
 
     if (!token) return 
 
-    fetch("https://localhost:7188/api/Usuario", {
+    fetch("http://25.52.127.25/api/Usuario", {
         method: "POST",
         headers: {
             "Authorization": `Bearer ${token}`,

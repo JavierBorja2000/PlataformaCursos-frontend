@@ -103,7 +103,9 @@ function ImprimirDatos(estudiantes){
         btnEliminar.textContent = "Eliminar";
         btnEliminar.classList.add("text-center", "text-white", "bg-red-600", "hover:bg-red-700", "font-bold", "px-2", "py-1", "rounded-md", "ml-3");
         btnEliminar.addEventListener("click", () => {
-            Eliminar(estudiante.idEstudiante);
+            var res = confirm("¿Seguro que desea eliminar el estudiante?");
+
+            if(res) Eliminar(estudiante.idEstudiante);
         });
 
         if(estudiante.estado == 'A'){

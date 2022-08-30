@@ -73,7 +73,7 @@ function EditarCurso(){
         }
     }).then(function (Data) {
         localStorage.removeItem("idEditar");
-        window.location.href = "/public/pages_instructor/curso_individual.html";
+        window.location.href = "../pages_instructor/curso_individual.html";
     });
 };
 
@@ -99,7 +99,7 @@ function GuardarCurso(){
         }
     }).then(function(Data){
         console.log(Data);
-        window.location.href = "/public/pages_instructor/miscursos.html";
+        window.location.href = "../pages_instructor/miscursos.html";
     })
 };
 

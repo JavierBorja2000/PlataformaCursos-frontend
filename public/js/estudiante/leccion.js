@@ -1,5 +1,5 @@
-let URLLeccion = "https://localhost:7188/api/Leccion/"
-let URLPreguntas = "https://localhost:7188/api/Pregunta"
+let URLLeccion = "http://25.52.127.25/api/Leccion/"
+let URLPreguntas = "http://25.52.127.25/api/Pregunta"
 let idLeccion;
 
 const $ = selector => document.querySelector(selector)

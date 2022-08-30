@@ -12,7 +12,7 @@
 <body>
     <header class="flex justify-between sticky top-0 items-center w-full min-h-[8vh] navbar navbar-expand-lg shadow-md py-2 px-10 bg-gray-50 z-50" >
         <div class="grow-0">
-            <a href="/public/pages_publico/home.html" class="text-decoration-none">        
+            <a href="../pages_publico/home.html" class="text-decoration-none">        
                 <p class="uppercase tracking-widest text-gray-800 font-bold text-xl">Learn<span class="text-violet-500">TO</span>GO</p> 
             </a>
         </div>
@@ -35,12 +35,12 @@
                 </div>
             </div>
             <ul class="panel-d justify-end align-center hidden sm:flex">
-                <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-6 py-2 border-2 border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="/public/access_pages/login.html">Iniciar Sesion</a></li>
-                <li class="h-full "><a class="text-decoration-none inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out" href="/public/access_pages/elegir_usuario.html">Registrate</a></li>
+                <li class="h-full "><a class="text-decoration-none inline-block mr-2 px-6 py-2 border-2 border-gray-800 text-gray-800 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="../access_pages/login.html">Iniciar Sesion</a></li>
+                <li class="h-full "><a class="text-decoration-none inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out" href="../access_pages/elegir_usuario.html">Registrate</a></li>
             </ul>
             <ul class="panel-m fixed bottom-0 right-0 min-h-[92vh] w-1/2 flex flex-col py-5 sm:hidden bg-gray-50 transition duration-300 ease-in-out z-50">
-                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="/public/access_pages/login.html">Iniciar Sesion</a></li>
-                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight  hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="/public/access_pages/elegir_usuario.html">Registrate</a></li>
+                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="../access_pages/login.html">Iniciar Sesion</a></li>
+                <li><a class="w-full block text-decoration-none px-6 py-5 text-gray-800 font-medium text-lg leading-tight  hover:bg-violet-500 hover:text-gray-200 transition duration-150 ease-in-out" href="../access_pages/elegir_usuario.html">Registrate</a></li>
             </ul>
             <button class="panel-btn hamburger hamburger--spin" type="button">
                 <span class="hamburger-box">
@@ -67,7 +67,7 @@
                             <button class="mt-4 text-white py-2 px-6 mb-3 rounded-lg bg-gray-900 hover:bg-violet-500 transition-all duration-300" onclick="Post();">Login</button>
                         </div>
                         <div class="flex justify-center items-baseline">
-                            <a href="/public/access_pages/elegir_usuario.html" class="text-sm hover:underline">¿No tienes una cuenta? Regístrate.</a>
+                            <a href="../access_pages/elegir_usuario.html" class="text-sm hover:underline">¿No tienes una cuenta? Regístrate.</a>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
 </html>
 
 <script>
-    var url="https://localhost:7188/api/Token";
+    var url="http://25.52.127.25/api/Token";
 
     //Se obtienen los inputs
     const campoUsuario = document.querySelector('#usuario');
