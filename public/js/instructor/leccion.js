@@ -63,7 +63,15 @@ async function cargarInfoPreguntas(){
     }
     try{
         let data = await fetch(`${URLPreguntas}/${idLeccion}`, options).then(response => response.json())
-        imprimirInfoPreguntas(data);
+        
+        if(data.length === 0) {
+            var msgPreguntas = document.querySelector("#msgPreguntas")
+            msgPreguntas.classList.remove("hidden")
+        }
+        else{
+            imprimirInfoPreguntas(data);
+        }
+
     }catch(ex){
         console.log(ex.message);
     }

@@ -53,6 +53,10 @@ async function cargarInfoPreguntas(){
 }
 
 function imprimirInfoLeccion(data){
+    if(data.status === 404){
+        window.location.href = "./cursos.html"
+    }
+
     $("#leccion_video").src = data.url
     $("#leccion_titulo").textContent = data.titulo
     $("#leccion_instructor").textContent = localStorage.getItem("nomInstructor")
@@ -60,7 +64,6 @@ function imprimirInfoLeccion(data){
 }
 
 function imprimirInfoPreguntas(data){
-    console.log(data)
     limpiarHTMLPreguntas()
     
     const $listadoPreguntas = $("#listado_preguntas")
