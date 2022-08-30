@@ -1,4 +1,8 @@
 /*Personalizados*/
+html{
+    scroll-behavior: smooth;
+}
+
 .panel-btn{
     margin-top: 3px !important;
 }

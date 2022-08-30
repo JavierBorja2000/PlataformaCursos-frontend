@@ -134,8 +134,7 @@
                 }
                 else if(Data.rol == "Administrador")
                 {
-                    document.getElementById("message_form").style.color = "green";
-                    document.getElementById("message_form").innerHTML = "Inicio de sesión como administrador";
+                    window.location.href = "../pages_admin/home.html"
                 }
             }
             else if(Data.msg && Data.error){
